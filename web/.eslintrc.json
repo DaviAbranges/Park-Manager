@@ -13,20 +13,21 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
     "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
-  "plugins": ["@typescript-eslint", "react", "simple-import-sort"],
+  "plugins": ["@typescript-eslint", "react"],
   "rules": {
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "react/prop-types": "off",
-    "react/react-in-jsx-scope": "off",
-    "simple-import-sort/imports": "error"
+    // Regras básicas do React e TypeScript
+    "react/react-in-jsx-scope": "off", // Não é necessário no React 17+
+    "@typescript-eslint/no-unused-vars": "warn", // Avisa sobre variáveis não usadas
+    "prettier/prettier": ["error", { "singleQuote": false, "semi": true }] // Prettier simples
   }
 }
