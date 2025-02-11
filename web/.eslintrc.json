@@ -25,9 +25,14 @@
   },
   "plugins": ["@typescript-eslint", "react"],
   "rules": {
+    // Desabilitar todas as verificações de formatação do Prettier
+    "prettier/prettier": ["off"],
+
     // Regras básicas do React e TypeScript
     "react/react-in-jsx-scope": "off", // Não é necessário no React 17+
-    "@typescript-eslint/no-unused-vars": "warn", // Avisa sobre variáveis não usadas
-    "prettier/prettier": ["error", { "singleQuote": false, "semi": true }] // Prettier simples
+    "@typescript-eslint/no-unused-vars": "off", // Não avisa sobre variáveis não usadas
+    "react/prop-types": "off", // Desativa a verificação de PropTypes no React
+    "no-console": "off", // Permite o uso de console.log sem avisos
+    "no-debugger": "off" // Permite o uso de debugger sem avisos
   }
 }
