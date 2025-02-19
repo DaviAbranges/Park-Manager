@@ -43,10 +43,17 @@ INSTALLED_APPS = [
     'vehicles',
     'space',
     'django_filters',
+    'accounts',
     'drf_spectacular',
     'rest_framework',
+    'rest_framework.authtoken', 
 ]
 REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        # Opcionalmente, você pode manter a SessionAuthentication para testes via navegador:
+        'rest_framework.authentication.SessionAuthentication',
+    ],
     'DEFAULT_FILTER_BACKENDS': [
         'django_filters.rest_framework.DjangoFilterBackend',
         'rest_framework.filters.SearchFilter',
